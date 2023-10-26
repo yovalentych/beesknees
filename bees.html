@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Опитування: Сільське господарство та опилення</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url(https://www.agrodostatok.com.ua/wp-content/uploads/2016/02/%D0%A1%D0%BE%D0%BD%D1%8F%D1%88%D0%BD%D0%B8%D0%BA.jpg); /* Додайте шлях до своєї фотографії */
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      /* Решта стилів залишається незмінною */
+      h1 {
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+      }
+
+      form {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      fieldset {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input[type='text'],
+      input[type='number'],
+      textarea {
+        width: 100%;
+        padding: 5px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      input[type='radio'],
+      input[type='checkbox'] {
+        margin-right: 5px;
+      }
+
+      button {
+        background-color: #0074d9;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      #fact-container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #e0e0e0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      #fact-text {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Опитування: Сільське господарство та опилення</h1>
+    <form id="survey-form">
+      <fieldset>
+        <legend>Особиста інформація</legend>
+        <label for="age">1. Вік:</label>
+        <input type="number" id="age" name="age" />
+
+        <label>2. Стать:</label>
+        <label for="male">Чоловіча</label>
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="female">Жіноча</label>
+        <input type="radio" id="female" name="gender" value="female" />
+
+        <label for="location">3. Місце проживання (місто/село):</label>
+        <input type="text" id="location" name="location" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Досвід і інтереси</legend>
+        <label
+          >4. Чи маєте ви сільськогосподарські угіддя або садові ділянки? Якщо
+          так, то розкажіть, які культури ви вирощуєте.</label
+        >
+        <textarea id="land" name="land" rows="4"></textarea>
+
+        <label
+          >5. Чи знаєте ви, як відбувається опилення рослин і чому воно важливе
+          для вирощування культур?</label
+        >
+        <textarea id="pollination" name="pollination" rows="4"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Поточні потреби</legend>
+        <label
+          >6. Чи цікавлять вас питання опилення рослин та як це може вплинути на
+          ваші угіддя?</label
+        >
+        <input type="checkbox" id="interest" name="interest" value="yes" />
+
+        <label for="problems"
+          >7. Які проблеми або питання виникають у вас в сільському
+          господарстві, пов'язані з опиленням рослин?</label
+        >
+        <textarea id="problems" name="problems" rows="4"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>Інформаційні джерела</legend>
+        <label
+          >8. Як ви зазвичай шукаєте інформацію про сільське господарство та
+          вирощування культур?</label
+        >
+        <input type="text" id="information-source" name="information-source" />
+
+        <label for="subscriptions"
+          >9. Чи підписані ви на якісь журнали, блоги або групи в соціальних
+          мережах, що стосуються сільського господарства?</label
+        >
+        <input type="text" id="subscriptions" name="subscriptions" />
+      </fieldset>
+
+      <fieldset>
+        <legend>Зворотній зв'язок</legend>
+        <label
+          >10. Чи були б ви зацікавлені у програмі або ресурсах, які допомагають
+          вам краще розуміти та використовувати процес опилення для покращення
+          вирощування рослин?</label
+        >
+        <input type="checkbox" id="feedback" name="feedback" value="yes" />
+      </fieldset>
+      <button type="submit">Надіслати</button>
+    </form>
+
+    <div id="fact-container">
+      <h2>Цікаві факти про бджоли та опилення</h2>
+      <p id="fact-text">Тут буде відображатися цікавий факт.</p>
+    </div>
+
+    <script>
+      // JavaScript код для зміни цікавих фактів
+      const facts = [
+        'Бджоли здатні опилювати близько 80% культур на планеті.',
+        'Мед є натуральним антисептиком і має цілющі властивості.',
+        'Одна бджола може здолати велику відстань для збору нектару.',
+        'Бджоли спільно працюють над вирощуванням і збереженням меду в ульях.',
+      ];
+
+      let factIndex = 0;
+      const factText = document.getElementById('fact-text');
+
+      function changeFact() {
+        factText.textContent = facts[factIndex];
+        factIndex = (factIndex + 1) % facts.length;
+      }
+
+      // Зміна факту кожні 7 секунд
+      setInterval(changeFact, 7000);
+    </script>
+  </body>
+</html>
